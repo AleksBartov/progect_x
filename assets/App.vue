@@ -34,11 +34,17 @@
       <v-spacer></v-spacer>
     </v-toolbar>
     <v-content>
-      <v-container fluid>
-        <v-slide-y-transition mode="out-in">
-          <router-view></router-view>
-        </v-slide-y-transition>
-      </v-container>
+      <v-layout>
+    <v-flex xs12>
+      <v-card>
+        <v-card-media
+          height="100vh"
+          src="/static/tracks.jpg"
+        >
+        </v-card-media>
+      </v-card>
+    </v-flex>
+  </v-layout>
     </v-content>
     <v-navigation-drawer
       temporary
