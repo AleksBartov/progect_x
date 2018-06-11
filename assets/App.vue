@@ -24,6 +24,8 @@
         </v-list-tile>
       </v-list>
     </v-navigation-drawer>
+
+
     <v-toolbar fixed >
       <v-toolbar-side-icon @click.stop="drawer = !drawer"></v-toolbar-side-icon>
     </v-toolbar>
@@ -31,8 +33,9 @@
       <v-toolbar-side-icon @click.stop="drawer = !drawer"></v-toolbar-side-icon>
       <v-spacer></v-spacer>
       <v-toolbar-title v-text="title" ></v-toolbar-title>
-      <v-spacer></v-spacer>
     </v-toolbar>
+
+
     <v-content>
       <v-container>
         <v-slide-y-transition mode="out-in">
@@ -40,6 +43,7 @@
         </v-slide-y-transition>
       </v-container>
     </v-content>
+    
     <v-footer :fixed="fixed" app class="secondary">
       <span>&copy; 2018</span>
     </v-footer>
