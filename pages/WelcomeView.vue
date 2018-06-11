@@ -1,5 +1,5 @@
 <template>
-<v-content>
+<div>
   <section>
     <v-parallax src="static/tracks.jpg" height="700">
     <v-layout
@@ -82,5 +82,5 @@
           </v-flex>
         </v-layout>
 </section>
-</v-content>
+</div>
 </template>
