@@ -8,7 +8,14 @@ import { createStore } from 'store/index'
 import { createRouter } from 'router/index'
 import { sync } from 'vuex-router-sync'
 
-Vue.use(Vuetify)
+Vue.use(Vuetify, {
+  theme: {
+    primary: '#e8472b',
+    secondary: '#172430',
+    accent: '#8c9eff',
+    error: '#b71c1c'
+  }
+})
 
 Object.keys(Components).forEach(key => {
   Vue.component(key, Components[key])

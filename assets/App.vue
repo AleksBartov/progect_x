@@ -1,11 +1,11 @@
 <template>
-  <v-app dark class="red">
+  <v-app dark class="primary">
     <v-navigation-drawer
       :mini-variant="miniVariant"
       :clipped="clipped"
       v-model="drawer"
       fixed
-      app class="indigo lighten-2"
+      app class="secondary"
     >
       <v-list>
         <v-list-tile 
@@ -27,25 +27,13 @@
     <v-toolbar fixed >
       <v-toolbar-side-icon @click.stop="drawer = !drawer"></v-toolbar-side-icon>
     </v-toolbar>
-    <v-toolbar fixed app :clipped-left="clipped" class="amber">
+    <v-toolbar fixed app :clipped-left="clipped" class="secondary">
       <v-toolbar-side-icon @click.stop="drawer = !drawer"></v-toolbar-side-icon>
       <v-spacer></v-spacer>
       <v-toolbar-title v-text="title"></v-toolbar-title>
       <v-spacer></v-spacer>
     </v-toolbar>
-    <v-content>
-      <v-layout>
-    <v-flex xs12>
-      <v-card>
-        <v-card-media
-          height="100vh"
-          src="/static/tracks.jpg"
-        >
-        </v-card-media>
-      </v-card>
-    </v-flex>
-  </v-layout>
-    </v-content>
+    <v-parallax src="/static/doc-images/parallax/material.jpg"></v-parallax>
     <v-navigation-drawer
       temporary
       :right="right"
@@ -61,7 +49,7 @@
         </v-list-tile>
       </v-list>
     </v-navigation-drawer>
-    <v-footer :fixed="fixed" app class="pink">
+    <v-footer :fixed="fixed" app class="secondary">
       <span>&copy; 2018</span>
     </v-footer>
   </v-app>
