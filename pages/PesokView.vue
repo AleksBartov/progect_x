@@ -50,7 +50,7 @@
 <script>
   export default {
     data: () => ({
-      lorem: `Lorem ipsum dolor sit amet, mel at clita quando. Te sit oratio vituperatoribus, nam ad ipsum posidonium mediocritatem, explicari dissentiunt cu mea. Repudiare disputationi vim in, mollis iriure nec cu, alienum argumentum ius ad. Pri eu justo aeque torquatos.`
+      lorem: `На сегодняшнее время строительный рынок предлагает огромное количество строительных материалов. Пожалуй, самым востребованным из них является строительный песок. Наша компания готова предложить Вам наиболее выгодные условия приобретения песка в любых объемах. Сказать, что песок применяется только в строительстве – значит не сказать ничего об этом уникальном для творчества материале. Дизайнеры часто используют его для декора фасада, и для создания уникальных предметов быта по индивидуальным эскизам.`
     })
   }
 </script>

@@ -47,7 +47,7 @@
             src: '/static/tracks.jpg'
           },
           {
-            src: '/static/tracks.jpg'
+            src: '/static/sand.jpg'
           },
           {
             src: '/static/tracks.jpg'
