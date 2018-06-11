@@ -13,7 +13,7 @@ Vue.use(Vuetify, {
     primary: '#e8472b',
     secondary: '#172430',
     letters: '#ECDEBB',
-    accent: '#8c9eff',
+    almgray: '#d58e73',
     error: '#b71c1c'
   }
 })

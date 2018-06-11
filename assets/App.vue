@@ -62,7 +62,8 @@
           { icon: 'bubble_chart', title: 'Песок', to: '/pesok' },
           { icon: 'bubble_chart', title: 'Вывоз вторички', to: '/vyvoz' },
           { icon: 'bubble_chart', title: 'Аренда спецтехники', to: '/arenda' },
-          { icon: 'bubble_chart', title: 'Гравий', to: '/gravy' }
+          { icon: 'bubble_chart', title: 'Гравий', to: '/gravy' },
+          { icon: 'bubble_chart', title: 'Фотоальбом', to: '/photos' }
         ],
         miniVariant: false,
         right: true,
