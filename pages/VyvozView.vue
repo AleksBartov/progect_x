@@ -7,7 +7,7 @@
         </v-card>
       </v-flex>
       <v-flex v-for="i in 2" :key="`6${i}`" xs6>
-        <v-card dark color="secondary">
+        <v-card dark color="almgray">
           <v-card-text class="px-0">6</v-card-text>
         </v-card>
       </v-flex>
@@ -17,7 +17,7 @@
         </v-card>
       </v-flex>
       <v-flex v-for="i in 4" :key="`3${i}`" xs3>
-        <v-card dark color="secondary">
+        <v-card dark color="almgray">
           <v-card-text class="px-0">3</v-card-text>
         </v-card>
       </v-flex>
@@ -27,7 +27,7 @@
         </v-card>
       </v-flex>
       <v-flex v-for="i in 12" :key="`1${i}`" xs1>
-        <v-card dark color="secondary">
+        <v-card dark color="almgray">
           <v-card-text class="px-0">1</v-card-text>
         </v-card>
       </v-flex>

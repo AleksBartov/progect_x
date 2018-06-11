@@ -1,10 +1,10 @@
 <template>
   <v-layout row>
-    <v-flex xs12 sm6 offset-sm3>
+    <v-flex xs12 sm8 offset-sm2>
     <v-card v-if="drawer">
-    <v-flex xs10 offset-xs1>
+    <v-flex xs12>
       <v-carousel >
-        <v-carousel-item v-for="(item,i) in items" :src="item.src" :key="i"></v-carousel-item>
+        <v-carousel-item v-for="(item,i) in items" :src="item.src" :key="i" ></v-carousel-item>
       </v-carousel>
     </v-flex>  
     </v-card>
