@@ -31,8 +31,20 @@
     </v-toolbar>
     <v-toolbar fixed app :clipped-left="clipped" class="secondary">
       <v-toolbar-side-icon @click.stop="drawer = !drawer"></v-toolbar-side-icon>
-      <v-spacer></v-spacer>
+      
       <v-toolbar-title v-text="title" ></v-toolbar-title>
+      <v-spacer></v-spacer>
+      <img src="static/logo.svg" alt="Vuetify.js" height="50">
+      <v-spacer></v-spacer>
+      <v-toolbar-items class="hidden-sm-and-down">
+        <v-btn flat>главная</v-btn>
+        <v-btn flat>материалы</v-btn>
+        <v-btn flat>услуги</v-btn>
+        <v-btn flat>прайс-лист</v-btn>
+        <v-btn flat>напишите нам</v-btn>
+        <v-btn flat>наш адрес</v-btn>
+        <v-btn flat>фотогалерея</v-btn>
+      </v-toolbar-items>
     </v-toolbar>
 
 

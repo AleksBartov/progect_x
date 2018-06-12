@@ -8,7 +8,7 @@
             justify-center
             class="white--text"
           >
-            <img src="static/logo.svg" alt="Vuetify.js" height="200">
+            <img src="static/v.png" alt="Vuetify.js" height="200">
 </v-layout>
       
     </v-parallax>
