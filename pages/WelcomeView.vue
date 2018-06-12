@@ -1,7 +1,8 @@
 <template>
 <div>
   <section>
-    <v-parallax src="static/tracks.jpg" height="700">
+    <v-parallax 
+    src="static/tracks.jpg" height="700">
     <v-layout
             column
             align-center

@@ -13,6 +13,7 @@
           :to="item.to"
           :key="i"
           v-for="(item, i) in items"
+          ripple
           exact
         >
           <v-list-tile-action>
@@ -38,7 +39,7 @@
       <v-spacer></v-spacer>
 
       <v-toolbar-items class="hidden-sm-and-down">
-        <v-btn flat>главная</v-btn>
+        <v-btn flat >главная</v-btn>
         <v-menu transition="scale-transition" origin="center center" open-on-hover>
           <v-btn slot="activator" dark color="secondary">материалы</v-btn>
           <v-list >

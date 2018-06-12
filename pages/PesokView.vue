@@ -9,7 +9,7 @@
               v-bind="{ [`xs${material.flex}`]: true }"
               :key="material.title"
             >
-              <v-card class="letters">
+              <v-card class="letters" v-ripple>
                 <v-card-media
                   :src="material.src"
                   height="200px"
