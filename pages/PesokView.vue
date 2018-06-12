@@ -1,56 +1,65 @@
 <template>
   <v-container fluid grid-list-md>
     <v-layout row wrap>
-      <v-flex d-flex xs12 sm6 md4>
-        <v-card color="almgray" dark>
-          <v-card-title primary class="title">Песок</v-card-title>
-          <v-card-text>{{ lorem }}</v-card-text>
-        </v-card>
-      </v-flex>
-      <v-flex d-flex xs12 sm6 md3>
-        <v-layout row wrap>
-          <v-flex d-flex>
-            <v-card color="indigo" dark>
-              <v-card-text>{{ lorem.slice(0, 70) }}</v-card-text>
-            </v-card>
-          </v-flex>
-          <v-flex d-flex>
-            <v-layout row wrap>
-              <v-flex
-                v-for="n in 2"
-                :key="n"
-                d-flex
-                xs12
-              >
-                <v-card
-                  color="red lighten-2"
-                  dark
+      <v-card class="letters">
+        <v-container fluid grid-list-md>
+          <v-layout row wrap>
+            <v-flex
+              v-for="material in materials"
+              v-bind="{ [`xs${material.flex}`]: true }"
+              :key="material.title"
+            >
+              <v-card class="letters">
+                <v-card-media
+                  :src="material.src"
+                  height="200px"
                 >
-                  <v-card-text>{{ lorem.slice(0, 40) }}</v-card-text>
-                </v-card>
-              </v-flex>
-            </v-layout>
-          </v-flex>
-        </v-layout>
-      </v-flex>
-      <v-flex d-flex xs12 sm6 md2 child-flex>
-        <v-card color="green lighten-2" dark>
-          <v-card-text>{{ lorem.slice(0, 90) }}</v-card-text>
-        </v-card>
-      </v-flex>
-      <v-flex d-flex xs12 sm6 md3>
-        <v-card color="blue lighten-2" dark>
-          <v-card-text>{{ lorem.slice(0, 100) }}</v-card-text>
-        </v-card>
-      </v-flex>
+                  <v-container fill-height fluid>
+                    <v-layout fill-height>
+                      <v-flex xs12 align-end flexbox>
+                        <span class="headline black--text" v-text="material.title"></span>
+                      </v-flex>
+                    </v-layout>
+                  </v-container>
+                </v-card-media>
+                <v-card-actions>
+                  <v-spacer></v-spacer>
+                  <v-btn icon>
+                    <v-icon>favorite</v-icon>
+                  </v-btn>
+                  <v-btn icon>
+                    <v-icon>bookmark</v-icon>
+                  </v-btn>
+                  <v-btn icon>
+                    <v-icon>share</v-icon>
+                  </v-btn>
+                </v-card-actions>
+              </v-card>
+            </v-flex>
+          </v-layout>
+        </v-container>
+      </v-card>
     </v-layout>
   </v-container>
 </template>
 
 <script>
   export default {
-    data: () => ({
-      lorem: `На сегодняшнее время строительный рынок предлагает огромное количество строительных материалов. Пожалуй, самым востребованным из них является строительный песок. Наша компания готова предложить Вам наиболее выгодные условия приобретения песка в любых объемах. Сказать, что песок применяется только в строительстве – значит не сказать ничего об этом уникальном для творчества материале. Дизайнеры часто используют его для декора фасада, и для создания уникальных предметов быта по индивидуальным эскизам.`
-    })
+    data () {
+      return {
+        materials: [
+          { id: 'shebGran', title: 'Щебень гранитный', src: '/static/shebGran.jpg', flex: 12, to: '/' },
+          { id: 'shebIzv', title: 'Щебень известняковый', src: '/static/shebIzv.jpg', flex: 6, to: '/pesok' },
+          { id: 'otsevGran', title: 'Отсев гранитный', src: '/static/otsevGran.jpg', flex: 6, to: '/vyvoz' },
+          { id: 'PGS', title: 'ПГС', src: '/static/PGS.jpeg', flex: 5, to: '/arenda' },
+          { id: 'keramz', title: 'Керамзит', src: '/static/keramz.jpg', flex: 7, to: '/gravy' },
+          { id: 'grunt', title: 'Грунт', src: '/static/grunt.jpg', flex: 6, to: '/photos' },
+          { id: 'boyKirp', title: 'Бой кирпича', src: '/static/boyKirp.jpg', flex: 6, to: '/vyvoz' },
+          { id: 'boyBet', title: 'Бой бетона', src: '/static/boyBet.jpg', flex: 12, to: '/arenda' },
+          { id: 'vtorSheb', title: 'Вторичный щебень', src: '/static/vtorSheb.jpg', flex: 6, to: '/gravy' },
+          { id: 'asfKrosh', title: 'Асфальтовая крошка', src: '/static/asfKrosh.jpg', flex: 6, to: '/photos' }
+        ]
+      }
+    }
   }
 </script>

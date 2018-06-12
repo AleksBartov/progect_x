@@ -36,9 +36,25 @@
       <v-spacer></v-spacer>
       <img src="static/logo.svg" alt="Vuetify.js" height="50">
       <v-spacer></v-spacer>
+
       <v-toolbar-items class="hidden-sm-and-down">
         <v-btn flat>главная</v-btn>
-        <v-btn flat>материалы</v-btn>
+        <v-menu transition="scale-transition" origin="center center" open-on-hover>
+          <v-btn slot="activator" dark color="secondary">материалы</v-btn>
+          <v-list >
+            <v-list-tile 
+              router
+              :to="material.to"
+              :key="i"
+              v-for="(material, i) in materials"
+              exact
+            >
+              <v-list-tile-content>
+                <v-list-tile-title v-text="material.title"></v-list-tile-title>
+              </v-list-tile-content>
+            </v-list-tile>
+          </v-list>
+        </v-menu>
         <v-btn flat>услуги</v-btn>
         <v-btn flat>прайс-лист</v-btn>
         <v-btn flat>напишите нам</v-btn>
@@ -74,12 +90,25 @@
         drawer: false,
         fixed: false,
         items: [
-          { icon: 'home', title: 'ЭТАЛОН', to: '/' },
-          { icon: 'bubble_chart', title: 'Песок', to: '/pesok' },
-          { icon: 'bubble_chart', title: 'Вывоз вторички', to: '/vyvoz' },
-          { icon: 'bubble_chart', title: 'Аренда спецтехники', to: '/arenda' },
-          { icon: 'bubble_chart', title: 'Гравий', to: '/gravy' },
-          { icon: 'bubble_chart', title: 'Фотоальбом', to: '/photos' }
+          { icon: 'home', title: 'главная', to: '/' },
+          { icon: 'bubble_chart', title: 'материалы', to: '/pesok' },
+          { icon: 'bubble_chart', title: 'услуги', to: '/vyvoz' },
+          { icon: 'bubble_chart', title: 'прайс-лист', to: '/arenda' },
+          { icon: 'bubble_chart', title: 'напишите нам', to: '/gravy' },
+          { icon: 'bubble_chart', title: 'наш адрес', to: '/photos' },
+          { icon: 'bubble_chart', title: 'фотогалерея', to: '/photos' }
+        ],
+        materials: [
+          { title: 'Щебень гранитный', to: '/' },
+          { title: 'Щебень известняковый', to: '/pesok' },
+          { title: 'Отсев гранитный', to: '/vyvoz' },
+          { title: 'ПГС', to: '/arenda' },
+          { title: 'Керамзит', to: '/gravy' },
+          { title: 'Грунт', to: '/photos' },
+          { title: 'Бой кирпича', to: '/vyvoz' },
+          { title: 'Бой бетона', to: '/arenda' },
+          { title: 'Вторичный щебень', to: '/gravy' },
+          { title: 'Асфальтовая крошка', to: '/photos' }
         ],
         miniVariant: false,
         right: true,
