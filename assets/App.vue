@@ -39,9 +39,9 @@
       <v-spacer></v-spacer>
 
       <v-toolbar-items class="hidden-sm-and-down">
-        <v-btn flat >главная</v-btn>
-        <v-menu transition="scale-transition" origin="center center" open-on-hover>
-          <v-btn slot="activator" dark color="secondary">материалы</v-btn>
+        <v-btn flat router :to="items[0].to">главная</v-btn>
+        <v-menu transition="slide-x-transition" open-on-hover>
+          <v-btn slot="activator" dark color="secondary" router :to="items[1].to">материалы</v-btn>
           <v-list >
             <v-list-tile 
               router
@@ -56,11 +56,30 @@
             </v-list-tile>
           </v-list>
         </v-menu>
-        <v-btn flat>услуги</v-btn>
-        <v-btn flat>прайс-лист</v-btn>
-        <v-btn flat>напишите нам</v-btn>
-        <v-btn flat>наш адрес</v-btn>
-        <v-btn flat>фотогалерея</v-btn>
+
+        <v-btn flat router :to="items[2].to">прайс-лист</v-btn>
+
+        <v-menu transition="slide-x-reverse-transition" open-on-hover >
+          <v-btn slot="activator" dark color="secondary" router :to="items[3].to">услуги</v-btn>
+          <v-list >
+            <v-list-tile 
+              router
+              :to="material.to"
+              :key="i"
+              v-for="(material, i) in services"
+              exact
+            >
+              <v-list-tile-content>
+                <v-list-tile-title v-text="material.title"></v-list-tile-title>
+              </v-list-tile-content>
+            </v-list-tile>
+          </v-list>
+        </v-menu>
+
+        
+        <v-btn flat router :to="items[4].to">напишите нам</v-btn>
+        <v-btn flat router :to="items[5].to">наш адрес</v-btn>
+        <v-btn flat router :to="items[6].to">фотогалерея</v-btn>
       </v-toolbar-items>
     </v-toolbar>
 
@@ -93,10 +112,10 @@
         items: [
           { icon: 'home', title: 'главная', to: '/' },
           { icon: 'bubble_chart', title: 'материалы', to: '/pesok' },
-          { icon: 'bubble_chart', title: 'услуги', to: '/vyvoz' },
           { icon: 'bubble_chart', title: 'прайс-лист', to: '/arenda' },
+          { icon: 'bubble_chart', title: 'услуги', to: '/vyvoz' },
           { icon: 'bubble_chart', title: 'напишите нам', to: '/gravy' },
-          { icon: 'bubble_chart', title: 'наш адрес', to: '/photos' },
+          { icon: 'bubble_chart', title: 'наш адрес', to: '/address' },
           { icon: 'bubble_chart', title: 'фотогалерея', to: '/photos' }
         ],
         materials: [
@@ -110,6 +129,14 @@
           { title: 'Бой бетона', to: '/arenda' },
           { title: 'Вторичный щебень', to: '/gravy' },
           { title: 'Асфальтовая крошка', to: '/photos' }
+        ],
+        services: [
+          { title: 'Аренда техники', to: '/' },
+          { title: 'Доставка сыпучих материалов', to: '/pesok' },
+          { title: 'Перевозка самосвалами', to: '/vyvoz' },
+          { title: 'Рытье котлованов', to: '/arenda' },
+          { title: 'Отсыпка участка', to: '/gravy' },
+          { title: 'Вывоз грунта ', to: '/photos' }
         ],
         miniVariant: false,
         right: true,

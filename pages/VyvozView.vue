@@ -1,36 +1,45 @@
 <template>
-  <v-container grid-list-md text-xs-center>
+  <v-container fluid grid-list-md>
     <v-layout row wrap>
-      <v-flex xs12>
-        <v-card dark color="primary">
-          <v-card-text class="px-0">12</v-card-text>
-        </v-card>
-      </v-flex>
-      <v-flex v-for="i in 2" :key="`6${i}`" xs6>
-        <v-card dark color="almgray">
-          <v-card-text class="px-0">6</v-card-text>
-        </v-card>
-      </v-flex>
-      <v-flex v-for="i in 3" :key="`4${i}`" xs4>
-        <v-card dark color="primary">
-          <v-card-text class="px-0">4</v-card-text>
-        </v-card>
-      </v-flex>
-      <v-flex v-for="i in 4" :key="`3${i}`" xs3>
-        <v-card dark color="almgray">
-          <v-card-text class="px-0">3</v-card-text>
-        </v-card>
-      </v-flex>
-      <v-flex v-for="i in 6" :key="`2${i}`" xs2>
-        <v-card dark color="primary">
-          <v-card-text class="px-0">2</v-card-text>
-        </v-card>
-      </v-flex>
-      <v-flex v-for="i in 12" :key="`1${i}`" xs1>
-        <v-card dark color="almgray">
-          <v-card-text class="px-0">1</v-card-text>
-        </v-card>
-      </v-flex>
+      <v-card class="letters">
+        <v-container fluid grid-list-md>
+          <v-layout row wrap>
+            <v-flex
+              v-for="material in services"
+              v-bind="{ [`xs${material.flex}`]: true }"
+              :key="material.title"
+            >
+              <v-card class="secondary" v-ripple>
+                <v-card-media
+                  :src="material.src"
+                  height="200px"
+                >
+                </v-card-media>
+                <v-card-actions>
+                  <span class="headline white--text" v-text="material.title"></span>
+                </v-card-actions>
+              </v-card>
+            </v-flex>
+          </v-layout>
+        </v-container>
+      </v-card>
     </v-layout>
   </v-container>
 </template>
+
+<script>
+  export default {
+    data () {
+      return {
+        services: [
+          { title: 'Аренда техники', src: '/static/arendaTekh.jpg', flex: 12, to: '/' },
+          { title: 'Доставка сыпучих материалов', src: '/static/dostavkaSyp.jpg', flex: 12, to: '/pesok' },
+          { title: 'Перевозка самосвалами', src: '/static/perevozkaSamosvalami.jpg', flex: 12, to: '/vyvoz' },
+          { title: 'Рытье котлованов', src: '/static/ryteKotlovanov.jpg', flex: 12, to: '/arenda' },
+          { title: 'Отсыпка участка', src: '/static/otsypkaUchastka.jpg', flex: 12, to: '/gravy' },
+          { title: 'Вывоз грунта ', src: '/static/vyvozGrunta.jpg', flex: 12, to: '/photos' }
+        ]
+      }
+    }
+  }
+</script>

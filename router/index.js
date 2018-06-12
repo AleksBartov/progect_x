@@ -27,6 +27,7 @@ export function createRouter () {
         route('/vyvoz', 'Vyvoz'),
         route('/arenda', 'Arenda'),
         route('/gravy', 'Gravy'),
+        route('/address', 'Address'),
         route('/photos', 'Photos'),
         // Global redirect for 404
         { path: '*', redirect: '/' }

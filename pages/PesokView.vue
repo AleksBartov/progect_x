@@ -9,30 +9,14 @@
               v-bind="{ [`xs${material.flex}`]: true }"
               :key="material.title"
             >
-              <v-card class="letters" v-ripple>
+              <v-card class="secondary" v-ripple>
                 <v-card-media
                   :src="material.src"
                   height="200px"
                 >
-                  <v-container fill-height fluid>
-                    <v-layout fill-height>
-                      <v-flex xs12 align-end flexbox>
-                        <span class="headline black--text" v-text="material.title"></span>
-                      </v-flex>
-                    </v-layout>
-                  </v-container>
                 </v-card-media>
                 <v-card-actions>
-                  <v-spacer></v-spacer>
-                  <v-btn icon>
-                    <v-icon>favorite</v-icon>
-                  </v-btn>
-                  <v-btn icon>
-                    <v-icon>bookmark</v-icon>
-                  </v-btn>
-                  <v-btn icon>
-                    <v-icon>share</v-icon>
-                  </v-btn>
+                  <span class="headline white--text" v-text="material.title"></span>
                 </v-card-actions>
               </v-card>
             </v-flex>
