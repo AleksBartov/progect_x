@@ -77,8 +77,8 @@
         </v-menu>
 
         
-        <v-btn flat router :to="items[4].to">напишите нам</v-btn>
-        <v-btn flat router :to="items[5].to">наш адрес</v-btn>
+        <v-btn flat router :to="items[4].to">личный кабинет</v-btn>
+        <v-btn flat router :to="items[5].to">контакты</v-btn>
         <v-btn flat router :to="items[6].to">фотогалерея</v-btn>
       </v-toolbar-items>
     </v-toolbar>
@@ -111,12 +111,12 @@
         fixed: false,
         items: [
           { icon: 'home', title: 'главная', to: '/' },
-          { icon: 'bubble_chart', title: 'материалы', to: '/pesok' },
-          { icon: 'bubble_chart', title: 'прайс-лист', to: '/arenda' },
-          { icon: 'bubble_chart', title: 'услуги', to: '/vyvoz' },
-          { icon: 'bubble_chart', title: 'напишите нам', to: '/gravy' },
-          { icon: 'bubble_chart', title: 'наш адрес', to: '/address' },
-          { icon: 'bubble_chart', title: 'фотогалерея', to: '/photos' }
+          { icon: 'category', title: 'материалы', to: '/pesok' },
+          { icon: 'receipt', title: 'прайс-лист', to: '/arenda' },
+          { icon: 'build', title: 'услуги', to: '/vyvoz' },
+          { icon: 'account_circle', title: 'личный кабинет', to: '/gravy' },
+          { icon: 'local_phone', title: 'контакты', to: '/address' },
+          { icon: 'photo_album', title: 'фотогалерея', to: '/photos' }
         ],
         materials: [
           { title: 'Щебень гранитный', to: '/' },

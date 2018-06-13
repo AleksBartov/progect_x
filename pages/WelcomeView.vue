@@ -1,22 +1,7 @@
 <template>
-<div>
-  <section>
     <v-parallax 
-    src="static/tracks.jpg" height="700">
+    src="static/tracks.jpg" height="1700">   
     <v-layout
-            column
-            align-center
-            justify-center
-            class="white--text"
-          >
-            <img src="static/v.png" alt="Vuetify.js" height="200">
-</v-layout>
-      
-    </v-parallax>
-  </section>
-
-  <section>
-        <v-layout
           column
           wrap
           class="my-5"
@@ -81,7 +66,6 @@
               </v-layout>
             </v-container>
           </v-flex>
-        </v-layout>
-</section>
-</div>
+        </v-layout>   
+    </v-parallax>
 </template>
