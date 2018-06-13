@@ -83,21 +83,6 @@
       </v-toolbar-items>
     </v-toolbar>
 
-    <v-layout v-scroll="onScroll" column align-center justify-center>
-      <v-btn
-                v-if="offsetTop > 300"
-                transition="scale-transition" origin="center center"
-                color="pink"
-                dark
-                fixed
-                bottom
-                right
-                fab
-              >
-                <v-icon>keyboard_arrow_up</v-icon>
-      </v-btn>
-    </v-layout>
-
     <v-content>
       <v-container>
         <v-slide-y-transition mode="out-in">
@@ -106,7 +91,19 @@
       </v-container>
     </v-content>
 
-    
+    <v-layout v-scroll="onScroll">
+      <v-btn
+                v-if="offsetTop > 300"
+                color="almgray"
+                fixed
+                bottom
+                right
+                fab
+                @click="$vuetify.goTo(target, options)"
+               >
+                <v-icon>keyboard_arrow_up</v-icon>
+      </v-btn>
+    </v-layout>
     
     <v-footer :fixed="fixed" app class="secondary">
       <span>&copy; 2018</span>
@@ -116,24 +113,32 @@
 
 <script>
   import Meta from 'mixins/meta'
+  import * as easings from 'vuetify/es5/util/easing-patterns'
 
   export default {
     mixins: [Meta],
 
     data () {
       return {
+        type: 'number',
+        number: 0,
+        duration: 700,
+        offset: 0,
+        easing: 'easeInOutCubic',
+        easings: Object.keys(easings),
+
         offsetTop: 0,
         clipped: true,
         drawer: false,
         fixed: false,
         items: [
-          { icon: 'home', title: 'главная', to: '/' },
-          { icon: 'category', title: 'материалы', to: '/pesok' },
-          { icon: 'receipt', title: 'прайс-лист', to: '/arenda' },
-          { icon: 'build', title: 'услуги', to: '/vyvoz' },
-          { icon: 'account_circle', title: 'личный кабинет', to: '/gravy' },
-          { icon: 'local_phone', title: 'контакты', to: '/address' },
-          { icon: 'photo_album', title: 'фотогалерея', to: '/photos' }
+          { icon: 'home', title: 'Главная', to: '/' },
+          { icon: 'category', title: 'Материалы', to: '/pesok' },
+          { icon: 'receipt', title: 'Прайс-лист', to: '/arenda' },
+          { icon: 'build', title: 'Услуги', to: '/vyvoz' },
+          { icon: 'account_circle', title: 'Личный кабинет', to: '/gravy' },
+          { icon: 'local_phone', title: 'Контакты', to: '/address' },
+          { icon: 'photo_album', title: 'Фотогалерея', to: '/photos' }
         ],
         materials: [
           { title: 'Щебень гранитный', to: '/' },
@@ -164,6 +169,20 @@
     methods: {
       onScroll (e) {
         this.offsetTop = window.pageYOffset || document.documentElement.scrollTop
+      }
+    },
+    computed: {
+      target () {
+        const value = this[this.type]
+        if (!isNaN(value)) return Number(value)
+        else return value
+      },
+      options () {
+        return {
+          duration: this.duration,
+          offset: this.offset,
+          easing: this.easing
+        }
       }
     }
   }
