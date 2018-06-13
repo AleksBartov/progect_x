@@ -33,15 +33,15 @@
       return {
         materials: [
           { id: 'shebGran', title: 'Щебень гранитный', src: '/static/shebGran.jpg', flex: 12, to: '/' },
-          { id: 'shebIzv', title: 'Щебень известняковый', src: '/static/shebIzv.jpg', flex: 6, to: '/pesok' },
-          { id: 'otsevGran', title: 'Отсев гранитный', src: '/static/otsevGran.jpg', flex: 6, to: '/vyvoz' },
-          { id: 'PGS', title: 'ПГС', src: '/static/PGS.jpeg', flex: 5, to: '/arenda' },
-          { id: 'keramz', title: 'Керамзит', src: '/static/keramz.jpg', flex: 7, to: '/gravy' },
-          { id: 'grunt', title: 'Грунт', src: '/static/grunt.jpg', flex: 6, to: '/photos' },
-          { id: 'boyKirp', title: 'Бой кирпича', src: '/static/boyKirp.jpg', flex: 6, to: '/vyvoz' },
+          { id: 'shebIzv', title: 'Щебень известняковый', src: '/static/shebIzv.jpg', flex: 12, to: '/pesok' },
+          { id: 'otsevGran', title: 'Отсев гранитный', src: '/static/otsevGran.jpg', flex: 12, to: '/vyvoz' },
+          { id: 'PGS', title: 'ПГС', src: '/static/PGS.jpeg', flex: 12, to: '/arenda' },
+          { id: 'keramz', title: 'Керамзит', src: '/static/keramz.jpg', flex: 12, to: '/gravy' },
+          { id: 'grunt', title: 'Грунт', src: '/static/grunt.jpg', flex: 12, to: '/photos' },
+          { id: 'boyKirp', title: 'Бой кирпича', src: '/static/boyKirp.jpg', flex: 12, to: '/vyvoz' },
           { id: 'boyBet', title: 'Бой бетона', src: '/static/boyBet.jpg', flex: 12, to: '/arenda' },
-          { id: 'vtorSheb', title: 'Вторичный щебень', src: '/static/vtorSheb.jpg', flex: 6, to: '/gravy' },
-          { id: 'asfKrosh', title: 'Асфальтовая крошка', src: '/static/asfKrosh.jpg', flex: 6, to: '/photos' }
+          { id: 'vtorSheb', title: 'Вторичный щебень', src: '/static/vtorSheb.jpg', flex: 12, to: '/gravy' },
+          { id: 'asfKrosh', title: 'Асфальтовая крошка', src: '/static/asfKrosh.jpg', flex: 12, to: '/photos' }
         ]
       }
     }

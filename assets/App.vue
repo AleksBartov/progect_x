@@ -83,6 +83,20 @@
       </v-toolbar-items>
     </v-toolbar>
 
+    <v-layout v-scroll="onScroll" column align-center justify-center>
+      <v-btn
+                v-if="offsetTop > 300"
+                transition="scale-transition" origin="center center"
+                color="pink"
+                dark
+                fixed
+                bottom
+                right
+                fab
+              >
+                <v-icon>keyboard_arrow_up</v-icon>
+      </v-btn>
+    </v-layout>
 
     <v-content>
       <v-container>
@@ -91,6 +105,8 @@
         </v-slide-y-transition>
       </v-container>
     </v-content>
+
+    
     
     <v-footer :fixed="fixed" app class="secondary">
       <span>&copy; 2018</span>
@@ -106,6 +122,7 @@
 
     data () {
       return {
+        offsetTop: 0,
         clipped: true,
         drawer: false,
         fixed: false,
@@ -142,6 +159,11 @@
         right: true,
         rightDrawer: false,
         title: 'ЭТАЛОН'
+      }
+    },
+    methods: {
+      onScroll (e) {
+        this.offsetTop = window.pageYOffset || document.documentElement.scrollTop
       }
     }
   }

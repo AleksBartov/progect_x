@@ -2,6 +2,7 @@ const fs = require('fs')
 const path = require('path')
 const LRU = require('lru-cache')
 const express = require('express')
+const mongoose = require('mongoose')
 const favicon = require('serve-favicon')
 const compression = require('compression')
 const resolve = file => path.resolve(__dirname, file)
@@ -139,6 +140,13 @@ app.get('*', isProd ? render : (req, res) => {
 })
 
 const port = process.env.PORT || 80
-app.listen(port, '0.0.0.0', () => {
-  console.log(`server started at localhost:${port}`)
-})
+
+mongoose
+    .connect('mongodb://AleksBartov:Merahba2018@ds259410.mlab.com:59410/progect_x')
+    .then(() => {
+      app.listen(port, '0.0.0.0', () => {
+        console.log(`server started at localhost:${port}`)
+        console.log('connected to MongoDB...')
+      })
+    })
+    .catch((err) => console.log(err));
