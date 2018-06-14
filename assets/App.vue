@@ -26,61 +26,25 @@
       </v-list>
     </v-navigation-drawer>
 
-
-    <v-toolbar fixed >
-      <v-toolbar-side-icon @click.stop="drawer = !drawer"></v-toolbar-side-icon>
-    </v-toolbar>
-    <v-toolbar fixed app :clipped-left="clipped" class="secondary">
-      <v-toolbar-side-icon @click.stop="drawer = !drawer"></v-toolbar-side-icon>
-      
-      <v-toolbar-title v-text="title" ></v-toolbar-title>
-      <v-spacer></v-spacer>
+    <v-toolbar fixed app :clipped-left="clipped" class="primary" v-resize="onResize">
+      <v-toolbar-side-icon @click.stop="drawer = !drawer" v-if="windowSize.x < 816"></v-toolbar-side-icon>      
       <img src="static/logo.svg" alt="Vuetify.js" height="50">
       <v-spacer></v-spacer>
+      <v-toolbar-title v-text="title" ></v-toolbar-title>
 
-      <v-toolbar-items class="hidden-sm-and-down">
-        <v-btn flat router :to="items[0].to">главная</v-btn>
-        <v-menu transition="slide-x-transition" open-on-hover>
-          <v-btn slot="activator" dark color="secondary" router :to="items[1].to">материалы</v-btn>
-          <v-list >
-            <v-list-tile 
-              router
-              :to="material.to"
-              :key="i"
-              v-for="(material, i) in materials"
-              exact
-            >
-              <v-list-tile-content>
-                <v-list-tile-title v-text="material.title"></v-list-tile-title>
-              </v-list-tile-content>
-            </v-list-tile>
-          </v-list>
-        </v-menu>
+      <v-tabs
+        slot="extension"
+        v-model="tab"
+        color="secondary"
+        grow
+        v-if="windowSize.x > 816"
+      >
+        <v-tabs-slider color="letters"></v-tabs-slider>
+        <v-tab v-for="item in items" :key="item" router :to="item.to">
+          {{ item.title }}
+        </v-tab>
+      </v-tabs>
 
-        <v-btn flat router :to="items[2].to">прайс-лист</v-btn>
-
-        <v-menu transition="slide-x-reverse-transition" open-on-hover >
-          <v-btn slot="activator" dark color="secondary" router :to="items[3].to">услуги</v-btn>
-          <v-list >
-            <v-list-tile 
-              router
-              :to="material.to"
-              :key="i"
-              v-for="(material, i) in services"
-              exact
-            >
-              <v-list-tile-content>
-                <v-list-tile-title v-text="material.title"></v-list-tile-title>
-              </v-list-tile-content>
-            </v-list-tile>
-          </v-list>
-        </v-menu>
-
-        
-        <v-btn flat router :to="items[4].to">личный кабинет</v-btn>
-        <v-btn flat router :to="items[5].to">контакты</v-btn>
-        <v-btn flat router :to="items[6].to">фотогалерея</v-btn>
-      </v-toolbar-items>
     </v-toolbar>
 
     <v-content>
@@ -120,6 +84,10 @@
 
     data () {
       return {
+        windowSize: {
+          x: 0,
+          y: 0
+        },
         type: 'number',
         number: 0,
         duration: 700,
@@ -166,9 +134,18 @@
         title: 'ЭТАЛОН'
       }
     },
+    mounted () {
+      this.onResize()
+    },
     methods: {
       onScroll (e) {
         this.offsetTop = window.pageYOffset || document.documentElement.scrollTop
+      },
+      onResize () {
+        this.windowSize = { x: window.innerWidth, y: window.innerHeight }
+        if (this.windowSize.x > 816) {
+          this.drawer = false
+        }
       }
     },
     computed: {
