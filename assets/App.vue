@@ -27,10 +27,22 @@
     </v-navigation-drawer>
 
     <v-toolbar fixed app :clipped-left="clipped" class="primary" v-resize="onResize">
-      <v-toolbar-side-icon @click.stop="drawer = !drawer" v-if="windowSize.x < 816"></v-toolbar-side-icon>      
+
+    <v-tabs
+        slot="extension"
+        color="secondary"
+        grow
+        v-if="windowSize.x < 816"
+      >
+      <v-toolbar-side-icon 
+              @click.stop="drawer = !drawer">
+      </v-toolbar-side-icon>  
+    </v-tabs>
+
       <img src="static/logo.svg" alt="Vuetify.js" height="50">
+      
+      <v-toolbar-title v-text="title"></v-toolbar-title>
       <v-spacer></v-spacer>
-      <v-toolbar-title v-text="title" ></v-toolbar-title>
 
       <v-tabs
         slot="extension"
