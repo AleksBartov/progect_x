@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="122mm"
+   height="32mm"
+   viewBox="0 0 122 32"
+   version="1.1"
+   id="svg8"
+   inkscape:version="0.92.2 (5c3e80d, 2017-08-06)"
+   sodipodi:docname="etalon_mask.svg">
+  <defs
+     id="defs2" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.98994949"
+     inkscape:cx="227.61232"
+     inkscape:cy="61.261596"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:measure-start="0,1121.77"
+     inkscape:measure-end="0,1001.06"
+     inkscape:window-width="1366"
+     inkscape:window-height="706"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(0,-265)">
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:11.79984665px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ecdebb;fill-opacity:1;stroke:#172430;stroke-width:0.44741042;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       x="0.014706653"
+       y="292.38608"
+       id="text817"
+       transform="scale(1.0194805,0.98089174)"><tspan
+         sodipodi:role="line"
+         id="tspan815"
+         x="0.014706653"
+         y="292.38608"
+         style="font-size:28.31962967px;fill:#ecdebb;fill-opacity:1;stroke:#172430;stroke-width:0.44741042;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1">ЭТАЛОН</tspan><tspan
+         sodipodi:role="line"
+         x="0.014706653"
+         y="312.71411"
+         style="font-size:7.07990742px;fill:#ecdebb;fill-opacity:1;stroke:#172430;stroke-width:0.44741042;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         id="tspan819" /><tspan
+         sodipodi:role="line"
+         x="0.014706653"
+         y="327.46393"
+         style="font-size:7.07990742px;fill:#ecdebb;fill-opacity:1;stroke:#172430;stroke-width:0.44741042;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         id="tspan821" /></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:7.9399457px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ecdebb;fill-opacity:1;stroke:#172430;stroke-width:0.35679054;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       x="1.2952771"
+       y="305.88004"
+       id="text825"
+       transform="scale(1.0382044,0.96320147)"><tspan
+         sodipodi:role="line"
+         id="tspan823"
+         x="1.2952771"
+         y="305.88004"
+         style="fill:#ecdebb;fill-opacity:1;stroke:#172430;stroke-width:0.35679054;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1">поставка сыпучих материалов</tspan></text>
+  </g>
+</svg>

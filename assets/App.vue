@@ -40,9 +40,12 @@
     </v-tabs>
 
       <img src="static/logo.svg" alt="Vuetify.js" height="50">
-      
-      <v-toolbar-title v-text="title"></v-toolbar-title>
       <v-spacer></v-spacer>
+      <img src="static/etalon_mask.svg" alt="Vuetify.js" height="50">
+      
+      <!--
+      <v-toolbar-title v-text="title"></v-toolbar-title>
+      -->
 
       <v-tabs
         slot="extension"
