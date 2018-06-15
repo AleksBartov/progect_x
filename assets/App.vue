@@ -38,9 +38,9 @@
               @click.stop="drawer = !drawer">
       </v-toolbar-side-icon>  
     </v-tabs>
-
+<v-spacer></v-spacer>
       <img src="static/logo.svg" alt="Vuetify.js" height="50">
-      <v-spacer></v-spacer>
+      
       <!--
       <img src="static/etalon_mask.svg" alt="Vuetify.js" height="50">
       
@@ -117,10 +117,10 @@
         fixed: false,
         items: [
           { icon: 'home', title: 'Главная', to: '/' },
-          { icon: 'category', title: 'Материалы', to: '/pesok' },
-          { icon: 'receipt', title: 'Прайс-лист', to: '/arenda' },
-          { icon: 'build', title: 'Услуги', to: '/vyvoz' },
-          { icon: 'account_circle', title: 'Личный кабинет', to: '/gravy' },
+          { icon: 'category', title: 'Материалы', to: '/materials' },
+          { icon: 'receipt', title: 'Прайс-лист', to: '/price_list' },
+          { icon: 'build', title: 'Услуги', to: '/services' },
+          { icon: 'account_circle', title: 'Личный кабинет', to: '/account' },
           { icon: 'local_phone', title: 'Контакты', to: '/address' },
           { icon: 'photo_album', title: 'Фотогалерея', to: '/photos' }
         ],

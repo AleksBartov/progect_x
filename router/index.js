@@ -16,6 +16,7 @@ function route (path, view) {
 
 Vue.use(Router)
 
+
 export function createRouter () {
     const router = new Router({
       base: __dirname,
@@ -23,10 +24,10 @@ export function createRouter () {
       scrollBehavior: () => ({ y: 0 }),
       routes: [
         route('/', 'Welcome'),
-        route('/pesok', 'Pesok'),
-        route('/vyvoz', 'Vyvoz'),
-        route('/arenda', 'Arenda'),
-        route('/gravy', 'Gravy'),
+        route('/materials', 'Materials'),
+        route('/services', 'Services'),
+        route('/price_list', 'Price_list'),
+        route('/account', 'Account'),
         route('/address', 'Address'),
         route('/photos', 'Photos'),
         // Global redirect for 404
