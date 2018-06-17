@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg"
+   width="563"
+   height="98.179001">
+  <defs>
+    <mask id="logoMask" width="563" height="98.179001">
+      <rect x="0" y="0" width="563" height="98.179001 fill="black" />
+      <text x="20" y="30" fill="white">ЭТАЛОН</text>
+    </mask>
+  </defs>
+
+  <rect x="0" y="0" width="563" height="98.179001 fill="#ECDEBB" mask="url(#logoMask)" />
+  
+</svg>
