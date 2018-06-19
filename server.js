@@ -1,9 +1,12 @@
 const fs = require('fs')
 const path = require('path')
 const LRU = require('lru-cache')
+const bodyParser = require('body-parser')
 const express = require('express')
 const mongoose = require('mongoose')
 const favicon = require('serve-favicon')
+const users = require('./routes/users')
+const auth = require('./routes/auth')
 const compression = require('compression')
 const resolve = file => path.resolve(__dirname, file)
 const { createBundleRenderer } = require('vue-server-renderer')
@@ -60,11 +63,14 @@ const serve = (path, cache) => express.static(resolve(path), {
   maxAge: cache && isProd ? 60 * 60 * 24 * 30 : 0
 })
 
+app.use(bodyParser.json())
 app.use(compression({ threshold: 0 }))
 app.use(favicon('./static/favicon.ico'))
 app.use('/static', serve('./static', true))
 app.use('/public', serve('./public', true))
 app.use('/static/robots.txt', serve('./robots.txt'))
+app.use('/account', users)
+app.use('/auth', auth)
 
 app.get('/sitemap.xml', (req, res) => {
   res.setHeader("Content-Type", "text/xml")

@@ -28,6 +28,7 @@ export function createRouter () {
         route('/services', 'Services'),
         route('/price_list', 'Price_list'),
         route('/account', 'Account'),
+        route('/auth', 'Auth'),
         route('/address', 'Address'),
         route('/photos', 'Photos'),
         // Global redirect for 404

@@ -24,6 +24,9 @@
           </v-list-tile-content>
         </v-list-tile>
       </v-list>
+      <v-divider></v-divider>
+      <v-btn color="primary" v-for="item in links" :key="item" router :to="item.to">Регистрация</v-btn>
+      <v-btn color="primary" v-for="item in auths" :key="item" router :to="item.to">Вход</v-btn>
     </v-navigation-drawer>
 
     <v-toolbar fixed app :clipped-left="clipped" class="primary" v-resize="onResize">
@@ -38,15 +41,12 @@
               @click.stop="drawer = !drawer">
       </v-toolbar-side-icon>  
     </v-tabs>
-<v-spacer></v-spacer>
-      <img src="static/logo.svg" alt="Vuetify.js" height="50">
+
+      <img src="static/logo.svg" alt="Vuetify.js" height="60">
+      <v-spacer></v-spacer>
+      <v-btn color="primary" v-if="windowSize.x > 816" v-for="item in links" :key="item" router :to="item.to">Регистрация</v-btn>
+      <v-btn color="secondary" v-if="windowSize.x > 816" v-for="item in auths" :key="item" router :to="item.to">Вход</v-btn>
       
-      <!--
-      <img src="static/etalon_mask.svg" alt="Vuetify.js" height="50">
-      
-      
-      <v-toolbar-title v-text="title"></v-toolbar-title>
-      -->
 
       <v-tabs
         slot="extension"
@@ -120,9 +120,14 @@
           { icon: 'category', title: 'Материалы', to: '/materials' },
           { icon: 'receipt', title: 'Прайс-лист', to: '/price_list' },
           { icon: 'build', title: 'Услуги', to: '/services' },
-          { icon: 'account_circle', title: 'Личный кабинет', to: '/account' },
           { icon: 'local_phone', title: 'Контакты', to: '/address' },
           { icon: 'photo_album', title: 'Фотогалерея', to: '/photos' }
+        ],
+        links: [
+          { icon: 'home', to: '/account' }
+        ],
+        auths: [
+          { icon: 'home', to: '/auth' }
         ],
         materials: [
           { title: 'Щебень гранитный', to: '/' },
