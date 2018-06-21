@@ -25,7 +25,7 @@
               v-model="snackbar"
             >
               {{ text }}
-              <v-btn dark flat @click.native="snackbar = false">Close</v-btn>
+              <v-btn dark flat @click.native="snackbar = false">закрыть</v-btn>
             </v-snackbar>
           </v-flex>
         </v-layout>
@@ -45,25 +45,21 @@
         snackbar: false,
         color: 'success',
         mode: 'multi-line',
-        timeout: 6000,
+        timeout: 5000,
         text: null
       }
     },
     methods: {
       sendingData () {
+        this.snackbar = true
         axios.post('/account', {
           username: this.username,
           email: this.email,
           password: this.password
         })
-        .then(function (response) {
-          console.log(response.data);
-        })
-        .catch(function (error) {
-          console.log(error.response.data);
-        });
-
-        this.snackbar = true;
+        .then(response => this.text = response.data)
+        .catch(error => this.text = error.response.data);
+        return this.text
       }
     }
   }
