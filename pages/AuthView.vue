@@ -8,8 +8,8 @@
               </v-toolbar>
               <v-card-text>
                 <v-form>
-                  <v-text-field prepend-icon="email" v-model="email" name="email" label="Электронная почта" type="text"></v-text-field>
-                  <v-text-field id="password" prepend-icon="lock" v-model="password" name="password" label="Пароль" type="password"></v-text-field>
+                  <v-text-field prepend-icon="email" v-model="email" name="email" label="Электронная почта" type="email"></v-text-field>
+                  <v-text-field id="password" prepend-icon="lock" v-model="пароль" name="пароль" label="Пароль" type="password"></v-text-field>
                 </v-form>
               </v-card-text>
               <v-card-actions >
@@ -38,9 +38,9 @@
     data () {
       return {
         email: null,
-        password: null,
+        пароль: null,
         snackbar: false,
-        color: 'success',
+        color: 'error',
         mode: 'multi-line',
         timeout: 5000,
         text: null
@@ -51,7 +51,7 @@
         this.snackbar = true;
         axios.post('/auth', {
           email: this.email,
-          password: this.password
+          пароль: this.пароль
         })
         .then(response => this.text = response.data)
         .catch(error => this.text = error.response.data);

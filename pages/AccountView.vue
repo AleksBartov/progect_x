@@ -8,9 +8,9 @@
               </v-toolbar>
               <v-card-text>
                 <v-form>
-                  <v-text-field prepend-icon="person_outline" v-model="username" name="username" label="Псевдоним" type="text"></v-text-field>
-                  <v-text-field prepend-icon="email" name="email" v-model="email" label="Электронная почта" type="text"></v-text-field>
-                  <v-text-field id="password" prepend-icon="lock" v-model="password" name="password" label="Пароль" type="password"></v-text-field>
+                  <v-text-field prepend-icon="person_outline" v-model="псевдоним" name="псевдоним" label="Псевдоним" type="text"></v-text-field>
+                  <v-text-field prepend-icon="email" name="email" v-model="email" label="Электронная почта" type="email"></v-text-field>
+                  <v-text-field id="password" prepend-icon="lock" v-model="пароль" name="пароль" label="Пароль" type="password"></v-text-field>
                 </v-form>
               </v-card-text>
               <v-card-actions >
@@ -39,11 +39,11 @@
   export default {
     data () {
       return {
-        username: null,
+        псевдоним: null,
         email: null,
-        password: null,
+        пароль: null,
         snackbar: false,
-        color: 'success',
+        color: 'error',
         mode: 'multi-line',
         timeout: 5000,
         text: null
@@ -53,9 +53,9 @@
       sendingData () {
         this.snackbar = true
         axios.post('/account', {
-          username: this.username,
+          псевдоним: this.псевдоним,
           email: this.email,
-          password: this.password
+          пароль: this.пароль
         })
         .then(response => this.text = response.data)
         .catch(error => this.text = error.response.data);

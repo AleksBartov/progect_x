@@ -13,7 +13,7 @@ router.post('/', async (req, res) => {
     let user = await User.findOne({ email: req.body.email });
     if (!user) return res.status(400).send('Вы ввели некорректные данные.');
 
-    const validPassword = await bcrypt.compare(req.body.password, user.password);
+    const validPassword = await bcrypt.compare(req.body.пароль, user.пароль);
     if (!validPassword) return res.status(400).send('Вы ввели некорректные данные.');
 
     res.send(true);
@@ -22,7 +22,7 @@ router.post('/', async (req, res) => {
 function validate (req) {
     const schema = {
         email: Joi.string().min(5).max(255).required().email(),
-        password: Joi.string().min(5).max(255).required()
+        пароль: Joi.string().min(5).max(255).required()
     }
 
     return Joi.validate(req, schema);
