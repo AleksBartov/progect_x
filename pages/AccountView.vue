@@ -43,7 +43,7 @@
         email: null,
         пароль: null,
         snackbar: false,
-        color: 'error',
+        color: null,
         mode: 'multi-line',
         timeout: 5000,
         text: null
@@ -57,9 +57,15 @@
           email: this.email,
           пароль: this.пароль
         })
-        .then(response => this.text = response.data)
-        .catch(error => this.text = error.response.data);
-        return this.text
+        .then(response => {
+          this.text = response.data;
+          this.color = 'success';
+        })
+        .catch(error => {
+          this.text = error.response.data;
+          this.color = 'error';
+        });
+        return this.text, this.color;
       }
     }
   }
