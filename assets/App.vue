@@ -112,7 +112,7 @@
         easings: Object.keys(easings),
 
         offsetTop: 0,
-        clipped: true,
+        clipped: false,
         drawer: false,
         fixed: false,
         items: [

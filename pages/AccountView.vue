@@ -8,17 +8,63 @@
               </v-toolbar>
               <v-card-text>
                 <v-form>
-                  <v-text-field prepend-icon="person_outline" name="username" label="Псевдоним" type="text"></v-text-field>
-                  <v-text-field prepend-icon="email" name="email" label="Электронная почта" type="text"></v-text-field>
-                  <v-text-field id="password" prepend-icon="lock" name="password" label="Пароль" type="password"></v-text-field>
+                  <v-text-field prepend-icon="person_outline" v-model="username" name="username" label="Псевдоним" type="text"></v-text-field>
+                  <v-text-field prepend-icon="email" name="email" v-model="email" label="Электронная почта" type="text"></v-text-field>
+                  <v-text-field id="password" prepend-icon="lock" v-model="password" name="password" label="Пароль" type="password"></v-text-field>
                 </v-form>
               </v-card-text>
               <v-card-actions >
                 <v-spacer></v-spacer>
-                <v-btn color="primary">Ok</v-btn>
+                <v-btn color="primary" @click="sendingData">Ok</v-btn>
               </v-card-actions>
             </v-card>
+            <v-snackbar
+              :timeout="timeout"
+              :color="color"
+              :multi-line="mode"
+              v-model="snackbar"
+            >
+              {{ text }}
+              <v-btn dark flat @click.native="snackbar = false">Close</v-btn>
+            </v-snackbar>
           </v-flex>
         </v-layout>
       </v-container>
 </template>
+
+
+<script>
+  import axios from 'axios'
+
+  export default {
+    data () {
+      return {
+        username: null,
+        email: null,
+        password: null,
+        snackbar: false,
+        color: 'success',
+        mode: 'multi-line',
+        timeout: 6000,
+        text: null
+      }
+    },
+    methods: {
+      sendingData () {
+        axios.post('/account', {
+          username: this.username,
+          email: this.email,
+          password: this.password
+        })
+        .then(function (response) {
+          console.log(response.data);
+        })
+        .catch(function (error) {
+          console.log(error.response.data);
+        });
+
+        this.snackbar = true;
+      }
+    }
+  }
+</script>

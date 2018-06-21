@@ -17,7 +17,7 @@ router.post('/', async (req, res) => {
     user.password = await bcrypt.hash(user.password, salt);
 
     await user.save();
-    res.send(_.pick(user, ['username', 'email']));
+    res.send(`Пользователь ${user.username} успешно зарегистрирован`);
 });
 
 module.exports = router;
