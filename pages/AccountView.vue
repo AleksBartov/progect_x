@@ -51,7 +51,6 @@
     },
     methods: {
       sendingData () {
-        this.snackbar = true
         axios.post('/account', {
           псевдоним: this.псевдоним,
           email: this.email,
@@ -65,6 +64,7 @@
           this.text = error.response.data;
           this.color = 'error';
         });
+        this.snackbar = true
         return this.text, this.color;
       }
     }

@@ -48,7 +48,6 @@
     },
     methods: {
       sendingData () {
-        this.snackbar = true;
         axios.post('/auth', {
           email: this.email,
           пароль: this.пароль
@@ -61,6 +60,7 @@
           this.text = error.response.data;
           this.color = 'error';
         });
+        this.snackbar = true;
         return this.text, this.color;        
       }
     }

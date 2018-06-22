@@ -153,6 +153,7 @@ mongoose
       app.listen(port, '0.0.0.0', () => {
         console.log(`server started at localhost:${port}`)
         console.log('connected to MongoDB...')
+        console.log(process.env.NODE_ENV)
       })
     })
     .catch((err) => console.log(err));
