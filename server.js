@@ -1,3 +1,4 @@
+const config = require('config')
 const fs = require('fs')
 const path = require('path')
 const LRU = require('lru-cache')
@@ -19,6 +20,11 @@ const serverInfo =
   `vue-server-renderer/${require('vue-server-renderer/package.json').version}`
 
 const app = express()
+
+if (!config.get('myJWTkey')) {
+  console.error('FATAL ERROR: myJWTkey НЕ ОПРЕДЕЛЕН');
+  process.exit(1);
+}
 
 const template = fs.readFileSync(resolve('./assets/index.template.html'), 'utf-8')
 
