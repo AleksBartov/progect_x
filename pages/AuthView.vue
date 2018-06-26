@@ -21,6 +21,7 @@
               :timeout="timeout"
               :color="color"
               :multi-line="mode"
+              top
               v-model="snackbar"
             >
               {{ text }}

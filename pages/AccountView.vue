@@ -10,7 +10,18 @@
                 <v-form>
                   <v-text-field prepend-icon="person_outline" v-model="псевдоним" name="псевдоним" label="Псевдоним" type="text"></v-text-field>
                   <v-text-field prepend-icon="email" name="email" v-model="email" label="Электронная почта" type="email"></v-text-field>
-                  <v-text-field id="password" prepend-icon="lock" v-model="пароль" name="пароль" label="Пароль" type="password"></v-text-field>
+                  <v-text-field
+                    v-model="пароль"
+                    prepend-icon="lock"
+                    :append-icon="e1 ? 'visibility' : 'visibility_off'"
+                    :append-icon-cb="() => (e1 = !e1)"
+                    :type="e1 ? 'password' : 'text'"
+                    name="input-10-1"
+                    label="Придумайте пароль"
+                    hint="по крайней мере 5 символов"
+                    min="5"
+                    counter
+                  ></v-text-field>
                 </v-form>
               </v-card-text>
               <v-card-actions >
@@ -21,6 +32,7 @@
             <v-snackbar
               :timeout="timeout"
               :color="color"
+              top
               :multi-line="mode"
               v-model="snackbar"
             >
@@ -39,6 +51,7 @@
   export default {
     data () {
       return {
+        e1: true,
         псевдоним: null,
         email: null,
         пароль: null,
